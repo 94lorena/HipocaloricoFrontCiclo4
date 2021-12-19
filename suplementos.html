@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/suplementos.js"></script>
+    <script src="js/nuevosuplemento.js"></script>
+    <script src="js/funciones.js"></script>
+  </head>
+  <body>
+    <br />
+    <a href="index.html"><img src="img/back.png" alt="Regresar" /></a>
+
+    <button id="nuevoRegistro" onclick="activaNuevo();">
+      Registrar Suplemento
+    </button>
+
+    <div id="mensajes"></div>
+
+
+    <div id="listado"></div>
+
+
+    <div id="nuevo">
+        <h3>Registrar Suplemento</h3>
+            <input type="text" id="reference" placeholder="Referencia" onkeydown="upperCaseF(this)">
+            <br><br>
+            <input type="text" id="brand" placeholder="Marca" onkeydown="upperCaseF(this)">
+            <br><br>
+            <input type="text" id="category" placeholder="Categoría" onkeydown="upperCaseF(this)">
+            <br><br>
+            <textarea id="objetivo" placeholder="Objetivo" rows="4" cols="50"  onkeydown="upperCaseF(this)"></textarea>
+            <br><br>
+            <textarea id="description" placeholder="Descripción" rows="4" cols="50"  onkeydown="upperCaseF(this)"></textarea>
+            <br><br>
+            <select id="availability" placeholder="availability">
+                <option value="true">SI</option>    
+                <option value="false">NO</option>
+            </select>
+            <br><br>
+            <input type="number" id="price" placeholder="Precio">
+            <br><br>
+            <input type="number" id="quantity" placeholder="Cantidad">
+            <br><br>
+            <input type="text" id="photography" placeholder="Imagen" onkeydown="upperCaseF(this)">
+            <br><br>
+            <button onclick="registrar();">Guardar</button>
+            <button onclick="estadoInicial();">Cancelar</button>
+    </div>
+
+
+    <div id="editar">Sección editar suplemento</div>
+
+
+    <div id="eliminar">Sección eliminar suplemento</div>
+  </body>
+</html>

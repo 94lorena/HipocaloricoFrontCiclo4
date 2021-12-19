@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>HIPOCALORICO</title>
+</head>
+
+
+
+<body>
+  <div class="container bg-light mt-5">
+    <h1 class="text-center mt-5">Bienvenidos</h1>
+    <div id="alerta" class="alert alert-info alert-dismissible">
+      <strong>Información:</strong> <span id="mensaje"></span>
+      <button class="close">&times;</button>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <h4>Productos disponibles</h4>
+        <form>
+          <div class="row mb-3  mt-5">
+            <label for="opcionConsulta" class="col-sm-2 col-form-label fw-bold">Opciones</label>
+            <div class="col-sm-4">
+              <select class="form-select" id="opcionConsulta">
+                <option value="0" selected>Todos</option>
+                <option value="1">X Menor Precio</option>
+                <option value="2">X Descripción</option>
+              </select>
+            </div>
+            <div id="camposConsulta" class="col-sm-4">
+              <input type="text" id="byPrice" class="form-control" onkeydown="upperCaseF(this)" />
+              <input type="text" id="byDescription" class="form-control" onkeydown="upperCaseF(this)" />
+            </div>
+            <div class="col-sm-2">
+              <button type="button" class="btn btn-primary" id="consultarProducto">Consultar</button>
+            </div>
+          </div>
+        </form>
+        <div class="mb-5" id="listado"></div>
+        <div class="mb-5" id="listadoxprecio"></div>
+        <div class="mb-5" id="listadoxdescripcion"></div>
+      </div>
+
+      <div class="col-md-2">
+        <h4>Iniciar Sesión</h4>
+        <form>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control mb-3" id="inputEmail">
+            <p class="text-danger err">*Debe ingresar el campo Email, y este debe ser un email valido.</p>
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control mb-3" id="inputPassword">
+            <p class="text-danger err">*Debe ingresar el campo Password</p>
+          </div>
+          <button id="autenticate" type="button" class="btn btn-primary text-center mt-1">Ingresar</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/query/productos.js"></script>
+    <script src="js/login/login.js"></script>
+    <script src="js/util/util.js"></script>
+  </div>
+</body>
+
+</html>
